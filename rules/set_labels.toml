@@ -1,0 +1,28 @@
+name = "Set labels for image"
+description = "Use labels to organize your images."
+
+[debian]
+negative = """
+CMD ["python", "-OO", "-m", "application"]
+"""
+positive = """
+CMD ["python", "-OO", "-m", "application"]
+
+LABEL \\
+    org.opencontainers.image.title="My Business Application" \\
+    org.opencontainers.image.vendor="My Best Company" \\
+    org.opencontainers.image.source="https://github.com/zsxoff/dockerfile-skills"
+"""
+
+[alpine]
+negative = """
+CMD ["python", "-OO", "-m", "application"]
+"""
+positive = """
+CMD ["python", "-OO", "-m", "application"]
+
+LABEL \\
+    org.opencontainers.image.title="My Business Application" \\
+    org.opencontainers.image.vendor="My Best Company" \\
+    org.opencontainers.image.source="https://github.com/zsxoff/dockerfile-skills"
+"""
