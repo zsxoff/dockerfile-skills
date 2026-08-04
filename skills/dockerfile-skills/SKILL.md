@@ -9,13 +9,13 @@
 **Bad:**
 
 ```dockerfile
-FROM debian:13.5-slim
+FROM debian:13.6-slim
 ```
 
 **Good:**
 
 ```dockerfile
-FROM debian:13.5-slim@sha256:4e401d95de7083948053197a9c3913343cd06b706bf15eb6a0c3ccd26f436a0e
+FROM debian:13.6-slim@sha256:020c0d20b9880058cbe785a9db107156c3c75c2ac944a6aa7ab59f2add76a7bd
 ```
 
 ### Alpine Linux
