@@ -25,3 +25,22 @@ hooks = [{ id = "codespell" }]
 repo = "https://github.com/DavidAnson/markdownlint-cli2"
 rev = "v0.23.1"
 hooks = [{ id = "markdownlint-cli2" }]
+
+[[repos]]
+repo = "local"
+hooks = [
+  {
+    id = "lint-rules",
+    name = "Lint rules",
+    entry = "python scripts/lint.py",
+    language = "system",
+    pass_filenames = false
+  },
+  {
+    id = "build-skill",
+    name = "Build SKILL.md",
+    entry = "python scripts/build.py",
+    language = "system",
+    pass_filenames = false
+  },
+]

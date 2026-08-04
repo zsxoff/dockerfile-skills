@@ -78,8 +78,15 @@ def main():
 
     file = Path(".") / "skills" / "dockerfile-skills" / "SKILL.md"
 
+    content = data.strip() + "\n"
+
+    existing = file.read_text(encoding="utf-8") if file.exists() else None
+
     with file.open("w") as writefile:
-        writefile.write(data.strip() + "\n")
+        writefile.write(content)
+
+    if existing != content:
+        raise SystemExit("SKILL.md is out of date, regenerated it")
 
 
 if __name__ == "__main__":
