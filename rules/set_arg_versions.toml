@@ -5,6 +5,7 @@ description = "Specify the base image version via ARG so that CI can override it
 negative = "FROM debian:trixie"
 positive = """
 ARG DEBIAN_VERSION=13.6
+
 FROM debian:${DEBIAN_VERSION}
 """
 
@@ -12,5 +13,6 @@ FROM debian:${DEBIAN_VERSION}
 negative = "FROM alpine:3.24.1"
 positive = """
 ARG ALPINE_TAG=3.24.1
+
 FROM alpine:${ALPINE_TAG}
 """

@@ -5,6 +5,7 @@ description = "Use the slim image version to get a smaller target image with few
 negative = "FROM debian:13.6"
 positive = """
 ARG DEBIAN_VERSION=13.6
+
 FROM debian:${DEBIAN_VERSION}-slim
 """
 
@@ -12,5 +13,6 @@ FROM debian:${DEBIAN_VERSION}-slim
 negative = "..."
 positive = """
 ARG ALPINE_TAG=3.24.1
+
 FROM alpine:${ALPINE_TAG}
 """

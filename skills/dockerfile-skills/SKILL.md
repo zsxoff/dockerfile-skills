@@ -16,6 +16,7 @@ FROM debian:trixie
 
 ```dockerfile
 ARG DEBIAN_VERSION=13.6
+
 FROM debian:${DEBIAN_VERSION}
 ```
 
@@ -31,6 +32,7 @@ FROM alpine:3.24.1
 
 ```dockerfile
 ARG ALPINE_TAG=3.24.1
+
 FROM alpine:${ALPINE_TAG}
 ```
 
@@ -50,6 +52,7 @@ FROM debian:13.6-slim
 
 ```dockerfile
 ARG DEBIAN_VERSION=13.6
+
 FROM debian:${DEBIAN_VERSION}-slim@sha256:020c0d20b9880058cbe785a9db107156c3c75c2ac944a6aa7ab59f2add76a7bd
 ```
 
@@ -65,6 +68,7 @@ FROM alpine:3.24.0
 
 ```dockerfile
 ARG ALPINE_TAG=3.24.0
+
 FROM alpine:${ALPINE_TAG}@sha256:a2d49ea686c2adfe3c992e47dc3b5e7fa6e6b5055609400dc2acaeb241c829f4
 ```
 
@@ -189,6 +193,7 @@ FROM debian:13.6
 
 ```dockerfile
 ARG DEBIAN_VERSION=13.6
+
 FROM debian:${DEBIAN_VERSION}-slim
 ```
 
@@ -204,6 +209,7 @@ FROM debian:${DEBIAN_VERSION}-slim
 
 ```dockerfile
 ARG ALPINE_TAG=3.24.1
+
 FROM alpine:${ALPINE_TAG}
 ```
 
