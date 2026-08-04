@@ -89,28 +89,28 @@ LABEL \
 **Good:**
 
 ```dockerfile
-ARG SUITE=trixie
-ARG MIRROR_DEBIAN=http://deb.debian.org/debian
+ARG DEBIAN_CODENAME=trixie
+ARG DEBIAN_MIRROR=http://deb.debian.org/debian
 
 RUN \
     rm -rf /etc/apt/sources.list /etc/apt/sources.list.d && \
     mkdir -p /etc/apt/sources.list.d && \
     { \
     echo "Types: deb" ; \
-    echo "URIs: ${MIRROR_DEBIAN}/" ; \
-    echo "Suites: ${SUITE}" ; \
+    echo "URIs: ${DEBIAN_MIRROR}/" ; \
+    echo "Suites: ${DEBIAN_CODENAME}" ; \
     echo "Components: main non-free contrib non-free-firmware" ; \
     echo "Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp" ; \
     echo ; \
     echo "Types: deb" ; \
-    echo "URIs: ${MIRROR_DEBIAN}/" ; \
-    echo "Suites: ${SUITE}-updates" ; \
+    echo "URIs: ${DEBIAN_MIRROR}/" ; \
+    echo "Suites: ${DEBIAN_CODENAME}-updates" ; \
     echo "Components: main non-free contrib non-free-firmware" ; \
     echo "Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp" ; \
     echo ; \
     echo "Types: deb" ; \
-    echo "URIs: ${MIRROR_DEBIAN}-security/" ; \
-    echo "Suites: ${SUITE}-security" ; \
+    echo "URIs: ${DEBIAN_MIRROR}-security/" ; \
+    echo "Suites: ${DEBIAN_CODENAME}-security" ; \
     echo "Components: main non-free contrib non-free-firmware" ; \
     echo "Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp" ; \
     } > /etc/apt/sources.list.d/mirror.sources
@@ -127,13 +127,13 @@ RUN \
 **Good:**
 
 ```dockerfile
-ARG VERSION=v3.24
-ARG MIRROR_ALPINE=https://dl-cdn.alpinelinux.org/alpine
+ARG ALPINE_VERSION=v3.24
+ARG ALPINE_MIRROR=https://dl-cdn.alpinelinux.org/alpine
 
 RUN \
     { \
-    echo "${MIRROR_ALPINE}/${VERSION}/main" ; \
-    echo "${MIRROR_ALPINE}/${VERSION}/community" ; \
+    echo "${ALPINE_MIRROR}/${ALPINE_VERSION}/main" ; \
+    echo "${ALPINE_MIRROR}/${ALPINE_VERSION}/community" ; \
     } > /etc/apk/repositories
 ```
 
