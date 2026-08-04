@@ -2,7 +2,7 @@
 
 ## Set ARG versions for image
 
-**Description**: Specify the base image version via ARG so that CI can override it with --build-arg without editing the Dockerfile.
+**Description**: Specify the base image version via ARG so that CI can override it with `--build-arg` without editing the Dockerfile.
 
 ### Debian Linux
 
