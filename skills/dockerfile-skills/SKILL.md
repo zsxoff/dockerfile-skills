@@ -9,7 +9,7 @@
 **Bad:**
 
 ```dockerfile
-FROM debian:trixie
+FROM debian:13.6
 ```
 
 **Good:**
