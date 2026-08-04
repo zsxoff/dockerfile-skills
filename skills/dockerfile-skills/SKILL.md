@@ -74,6 +74,38 @@ LABEL \
     org.opencontainers.image.source="https://github.com/zsxoff/dockerfile-skills"
 ```
 
+## Set TERM for image
+
+**Description**: TERM tells programs what escape codes/colors the terminal supports, so colors and TUIs work.
+
+### Debian Linux
+
+**Bad:**
+
+```dockerfile
+...
+```
+
+**Good:**
+
+```dockerfile
+ENV TERM=xterm-256color
+```
+
+### Alpine Linux
+
+**Bad:**
+
+```dockerfile
+...
+```
+
+**Good:**
+
+```dockerfile
+ENV TERM=xterm-256color
+```
+
 ## Set time zone for image
 
 **Description**: If your application works with time (at least logging), let it determine the time at least in UTC.

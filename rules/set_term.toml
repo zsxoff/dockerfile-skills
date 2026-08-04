@@ -1,0 +1,10 @@
+name = "Set TERM for image"
+description = "TERM tells programs what escape codes/colors the terminal supports, so colors and TUIs work."
+
+[debian]
+negative = "..."
+positive = "ENV TERM=xterm-256color"
+
+[alpine]
+negative = "..."
+positive = "ENV TERM=xterm-256color"
