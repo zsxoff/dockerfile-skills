@@ -137,6 +137,38 @@ RUN \
     } > /etc/apk/repositories
 ```
 
+## Set slim image
+
+**Description**: Use the slim image version to get a smaller target image with fewer packages and a reduced attack surface.
+
+### Debian Linux
+
+**Bad:**
+
+```dockerfile
+FROM debian:13.6
+```
+
+**Good:**
+
+```dockerfile
+FROM debian:13.6-slim
+```
+
+### Alpine Linux
+
+**Bad:**
+
+```dockerfile
+...
+```
+
+**Good:**
+
+```dockerfile
+FROM alpine:3.24.1
+```
+
 ## Set TERM for image
 
 **Description**: TERM tells programs what escape codes/colors the terminal supports, so colors and TUIs work.
