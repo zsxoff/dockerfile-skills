@@ -1,0 +1,43 @@
+name = "Set own mirrors for packages"
+description = "Override mirrors to fetch packages from faster/more reliable sources (local mirror, proxy, cache)."
+
+[debian]
+negative = "..."
+positive = """
+ARG SUITE=trixie
+
+RUN \\
+    rm -rf /etc/apt/sources.list /etc/apt/sources.list.d && \\
+    mkdir -p /etc/apt/sources.list.d && \\
+    { \\
+    echo "Types: deb" ; \\
+    echo "URIs: http://deb.debian.org/debian/" ; \\
+    echo "Suites: ${SUITE}" ; \\
+    echo "Components: main non-free contrib non-free-firmware" ; \\
+    echo "Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp" ; \\
+    echo ; \\
+    echo "Types: deb" ; \\
+    echo "URIs: http://deb.debian.org/debian/" ; \\
+    echo "Suites: ${SUITE}-updates" ; \\
+    echo "Components: main non-free contrib non-free-firmware" ; \\
+    echo "Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp" ; \\
+    echo ; \\
+    echo "Types: deb" ; \\
+    echo "URIs: http://deb.debian.org/debian-security/" ; \\
+    echo "Suites: ${SUITE}-security" ; \\
+    echo "Components: main non-free contrib non-free-firmware" ; \\
+    echo "Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp" ; \\
+    } > /etc/apt/sources.list.d/mirror.sources
+"""
+
+[alpine]
+negative = "..."
+positive = """
+ARG VERSION=v3.24
+
+RUN \\
+    { \\
+    echo "https://dl-cdn.alpinelinux.org/alpine/${VERSION}/main" ; \\
+    echo "https://dl-cdn.alpinelinux.org/alpine/${VERSION}/community" ; \\
+    } > /etc/apk/repositories
+"""

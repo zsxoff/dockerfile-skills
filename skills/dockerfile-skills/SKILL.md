@@ -74,6 +74,67 @@ LABEL \
     org.opencontainers.image.source="https://github.com/zsxoff/dockerfile-skills"
 ```
 
+## Set own mirrors for packages
+
+**Description**: Override mirrors to fetch packages from faster/more reliable sources (local mirror, proxy, cache).
+
+### Debian Linux
+
+**Bad:**
+
+```dockerfile
+...
+```
+
+**Good:**
+
+```dockerfile
+ARG SUITE=trixie
+
+RUN \
+    rm -rf /etc/apt/sources.list /etc/apt/sources.list.d && \
+    mkdir -p /etc/apt/sources.list.d && \
+    { \
+    echo "Types: deb" ; \
+    echo "URIs: http://deb.debian.org/debian/" ; \
+    echo "Suites: ${SUITE}" ; \
+    echo "Components: main non-free contrib non-free-firmware" ; \
+    echo "Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp" ; \
+    echo ; \
+    echo "Types: deb" ; \
+    echo "URIs: http://deb.debian.org/debian/" ; \
+    echo "Suites: ${SUITE}-updates" ; \
+    echo "Components: main non-free contrib non-free-firmware" ; \
+    echo "Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp" ; \
+    echo ; \
+    echo "Types: deb" ; \
+    echo "URIs: http://deb.debian.org/debian-security/" ; \
+    echo "Suites: ${SUITE}-security" ; \
+    echo "Components: main non-free contrib non-free-firmware" ; \
+    echo "Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp" ; \
+    } > /etc/apt/sources.list.d/mirror.sources
+```
+
+### Alpine Linux
+
+**Bad:**
+
+```dockerfile
+...
+```
+
+**Good:**
+
+```dockerfile
+ARG VERSION=v3.24
+
+RUN \
+    { \
+    echo "https://dl-cdn.alpinelinux.org/alpine/${VERSION}/main" ; \
+    echo "https://dl-cdn.alpinelinux.org/alpine/${VERSION}/community" ; \
+    } > /etc/apk/repositories
+```
+
 ## Set TERM for image
 
 **Description**: TERM tells programs what escape codes/colors the terminal supports, so colors and TUIs work.
