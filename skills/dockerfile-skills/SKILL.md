@@ -61,15 +61,15 @@ FROM debian:${DEBIAN_VERSION}-slim@sha256:020c0d20b9880058cbe785a9db107156c3c75c
 **Bad:**
 
 ```dockerfile
-FROM alpine:3.24.0
+FROM alpine:3.24.1
 ```
 
 **Good:**
 
 ```dockerfile
-ARG ALPINE_TAG=3.24.0
+ARG ALPINE_TAG=3.24.1
 
-FROM alpine:${ALPINE_TAG}@sha256:a2d49ea686c2adfe3c992e47dc3b5e7fa6e6b5055609400dc2acaeb241c829f4
+FROM alpine:${ALPINE_TAG}@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
 ```
 
 ## Set labels for image
