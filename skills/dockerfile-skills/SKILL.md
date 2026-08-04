@@ -1,5 +1,39 @@
 # dockerfile-skills
 
+## Set ARG versions for image
+
+**Description**: Specify the base image version via ARG so that CI can override it with --build-arg without editing the Dockerfile.
+
+### Debian Linux
+
+**Bad:**
+
+```dockerfile
+FROM debian:trixie
+```
+
+**Good:**
+
+```dockerfile
+ARG DEBIAN_VERSION=13.6
+FROM debian:${DEBIAN_VERSION}
+```
+
+### Alpine Linux
+
+**Bad:**
+
+```dockerfile
+FROM alpine:3.24.1
+```
+
+**Good:**
+
+```dockerfile
+ARG ALPINE_TAG=3.24.1
+FROM alpine:${ALPINE_TAG}
+```
+
 ## Set SHA-256 digest using image
 
 **Description**: To ensure reproducibility of the build, as tags may appear in different images.
@@ -15,7 +49,8 @@ FROM debian:13.6-slim
 **Good:**
 
 ```dockerfile
-FROM debian:13.6-slim@sha256:020c0d20b9880058cbe785a9db107156c3c75c2ac944a6aa7ab59f2add76a7bd
+ARG DEBIAN_VERSION=13.6
+FROM debian:${DEBIAN_VERSION}-slim@sha256:020c0d20b9880058cbe785a9db107156c3c75c2ac944a6aa7ab59f2add76a7bd
 ```
 
 ### Alpine Linux
@@ -29,7 +64,8 @@ FROM alpine:3.24.0
 **Good:**
 
 ```dockerfile
-FROM alpine:3.24.0@sha256:a2d49ea686c2adfe3c992e47dc3b5e7fa6e6b5055609400dc2acaeb241c829f4
+ARG ALPINE_TAG=3.24.0
+FROM alpine:${ALPINE_TAG}@sha256:a2d49ea686c2adfe3c992e47dc3b5e7fa6e6b5055609400dc2acaeb241c829f4
 ```
 
 ## Set labels for image
@@ -152,7 +188,8 @@ FROM debian:13.6
 **Good:**
 
 ```dockerfile
-FROM debian:13.6-slim
+ARG DEBIAN_VERSION=13.6
+FROM debian:${DEBIAN_VERSION}-slim
 ```
 
 ### Alpine Linux
@@ -166,7 +203,8 @@ FROM debian:13.6-slim
 **Good:**
 
 ```dockerfile
-FROM alpine:3.24.1
+ARG ALPINE_TAG=3.24.1
+FROM alpine:${ALPINE_TAG}
 ```
 
 ## Set TERM for image

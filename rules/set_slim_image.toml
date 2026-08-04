@@ -3,8 +3,14 @@ description = "Use the slim image version to get a smaller target image with few
 
 [debian]
 negative = "FROM debian:13.6"
-positive = "FROM debian:13.6-slim"
+positive = """
+ARG DEBIAN_VERSION=13.6
+FROM debian:${DEBIAN_VERSION}-slim
+"""
 
 [alpine]
 negative = "..."
-positive = "FROM alpine:3.24.1"
+positive = """
+ARG ALPINE_TAG=3.24.1
+FROM alpine:${ALPINE_TAG}
+"""

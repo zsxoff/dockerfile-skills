@@ -1,0 +1,16 @@
+name = "Set ARG versions for image"
+description = "Specify the base image version via ARG so that CI can override it with --build-arg without editing the Dockerfile."
+
+[debian]
+negative = "FROM debian:trixie"
+positive = """
+ARG DEBIAN_VERSION=13.6
+FROM debian:${DEBIAN_VERSION}
+"""
+
+[alpine]
+negative = "FROM alpine:3.24.1"
+positive = """
+ARG ALPINE_TAG=3.24.1
+FROM alpine:${ALPINE_TAG}
+"""
