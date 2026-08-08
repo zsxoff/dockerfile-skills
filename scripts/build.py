@@ -1,5 +1,6 @@
+from collections.abc import Generator
 from pathlib import Path
-from typing import Generator, NamedTuple
+from typing import NamedTuple
 
 import tomllib
 
