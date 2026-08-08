@@ -27,6 +27,11 @@ rev = "v0.23.1"
 hooks = [{ id = "markdownlint-cli2" }]
 
 [[repos]]
+repo = "https://github.com/editorconfig-checker/editorconfig-checker"
+rev = "v3.11.1"
+hooks = [{ id = "editorconfig-checker" }]
+
+[[repos]]
 repo = "local"
 hooks = [
   {
