@@ -1,5 +1,6 @@
 name = "Set ARG versions for image"
 description = "Specify the base image version via ARG so that CI can override it with `--build-arg` without editing the Dockerfile."
+skill = "dockerfile-skills"
 
 [debian]
 negative = "FROM debian:13.6"

@@ -1,5 +1,6 @@
 name = "Set TERM for image"
 description = "TERM tells programs what escape codes/colors the terminal supports, so colors and TUIs work."
+skill = "dockerfile-skills"
 
 [debian]
 negative = "..."

@@ -1,5 +1,6 @@
 name = "Set time zone for image"
 description = "If your application works with time (at least logging), let it determine the time at least in UTC."
+skill = "dockerfile-skills"
 
 [debian]
 negative = "..."

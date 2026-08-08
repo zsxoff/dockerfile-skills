@@ -1,5 +1,6 @@
 name = "Set SHA-256 digest using image"
 description = "To ensure reproducibility of the build, as tags may appear in different images."
+skill = "dockerfile-skills"
 
 [debian]
 negative = "FROM debian:13.6-slim"

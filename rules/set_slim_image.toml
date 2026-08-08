@@ -1,5 +1,6 @@
 name = "Set slim image"
 description = "Use the slim image version to get a smaller target image with fewer packages and a reduced attack surface."
+skill = "dockerfile-skills"
 
 [debian]
 negative = "FROM debian:13.6"

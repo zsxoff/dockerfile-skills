@@ -1,5 +1,6 @@
 name = "Set labels for image"
 description = "Use labels to organize your images."
+skill = "dockerfile-skills"
 
 [debian]
 negative = """

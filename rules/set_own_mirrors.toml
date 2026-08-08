@@ -1,5 +1,6 @@
 name = "Set own mirrors for packages"
 description = "Override mirrors to fetch packages from faster/more reliable sources (local mirror, proxy, cache)."
+skill = "dockerfile-skills"
 
 [debian]
 negative = "..."

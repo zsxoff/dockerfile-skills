@@ -16,6 +16,7 @@ def main():
 
         print_if_not(data.get("name"), f"Rule {file.name} has no name")
         print_if_not(data.get("description"), f"Rule {file.name} has no description")
+        print_if_not(data.get("skill"), f"Rule {file.name} has no skill")
 
         for distrib in ["debian", "alpine"]:
             print_if_not(
