@@ -23,7 +23,7 @@ hooks = [{ id = "codespell" }]
 
 [[repos]]
 repo = "https://github.com/DavidAnson/markdownlint-cli2"
-rev = "v0.23.1"
+rev = "v0.23.2"
 hooks = [{ id = "markdownlint-cli2" }]
 
 [[repos]]
