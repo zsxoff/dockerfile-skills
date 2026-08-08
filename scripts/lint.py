@@ -14,9 +14,12 @@ def main():
         with file.open("rb") as readfile:
             data = tomllib.load(readfile)
 
-        print_if_not(data.get("name"), f"Rule {file.name} has no name")
-        print_if_not(data.get("description"), f"Rule {file.name} has no description")
-        print_if_not(data.get("skill"), f"Rule {file.name} has no skill")
+        base_fields = ("name", "description", "skill")
+
+        for base_field in base_fields:
+            print_if_not(
+                data.get(base_field), f"Rule {file.name} has no `{base_field}` field"
+            )
 
         for distrib in ["debian", "alpine"]:
             print_if_not(
