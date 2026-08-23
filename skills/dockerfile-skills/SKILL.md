@@ -31,9 +31,9 @@ FROM alpine:3.24.1
 **Good:**
 
 ```dockerfile
-ARG ALPINE_TAG=3.24.1
+ARG ALPINE_VERSION=3.24.1
 
-FROM alpine:${ALPINE_TAG}
+FROM alpine:${ALPINE_VERSION}
 ```
 
 ## Set SHA-256 digest using image
@@ -67,9 +67,9 @@ FROM alpine:3.24.1
 **Good:**
 
 ```dockerfile
-ARG ALPINE_TAG=3.24.1
+ARG ALPINE_VERSION=3.24.1
 
-FROM alpine:${ALPINE_TAG}@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
+FROM alpine:${ALPINE_VERSION}@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
 ```
 
 ## Set labels for image
@@ -208,9 +208,9 @@ FROM debian:${DEBIAN_VERSION}-slim
 **Good:**
 
 ```dockerfile
-ARG ALPINE_TAG=3.24.1
+ARG ALPINE_VERSION=3.24.1
 
-FROM alpine:${ALPINE_TAG}
+FROM alpine:${ALPINE_VERSION}
 ```
 
 ## Set TERM for image

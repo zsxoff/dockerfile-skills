@@ -13,7 +13,7 @@ FROM debian:${DEBIAN_VERSION}-slim
 [alpine]
 negative = "..."
 positive = """
-ARG ALPINE_TAG=3.24.1
+ARG ALPINE_VERSION=3.24.1
 
-FROM alpine:${ALPINE_TAG}
+FROM alpine:${ALPINE_VERSION}
 """
