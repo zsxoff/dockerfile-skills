@@ -81,13 +81,13 @@ FROM alpine:${ALPINE_VERSION}@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db8
 **Bad:**
 
 ```dockerfile
-CMD ["python", "-OO", "-m", "application"]
+CMD ["application"]
 ```
 
 **Good:**
 
 ```dockerfile
-CMD ["python", "-OO", "-m", "application"]
+CMD ["application"]
 
 LABEL \
     org.opencontainers.image.title="My Business Application" \
@@ -100,13 +100,13 @@ LABEL \
 **Bad:**
 
 ```dockerfile
-CMD ["python", "-OO", "-m", "application"]
+CMD ["application"]
 ```
 
 **Good:**
 
 ```dockerfile
-CMD ["python", "-OO", "-m", "application"]
+CMD ["application"]
 
 LABEL \
     org.opencontainers.image.title="My Business Application" \

@@ -4,10 +4,10 @@ skill = "dockerfile-skills"
 
 [debian]
 negative = """
-CMD ["python", "-OO", "-m", "application"]
+CMD ["application"]
 """
 positive = """
-CMD ["python", "-OO", "-m", "application"]
+CMD ["application"]
 
 LABEL \\
     org.opencontainers.image.title="My Business Application" \\
@@ -17,10 +17,10 @@ LABEL \\
 
 [alpine]
 negative = """
-CMD ["python", "-OO", "-m", "application"]
+CMD ["application"]
 """
 positive = """
-CMD ["python", "-OO", "-m", "application"]
+CMD ["application"]
 
 LABEL \\
     org.opencontainers.image.title="My Business Application" \\
